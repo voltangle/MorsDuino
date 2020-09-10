@@ -1,15 +1,17 @@
-#ifndef MORZEDUINO_H
-#define MORZEDUINO_H
+#ifndef MORSEDUINO_H
+#define MORSEDUINO_H
 
 #include <string>
 #include "Arduino.h"
 
-class MorzeDuino {
+class MorseDuino {
     public:
-        int MorseDuino(int pin);
+        MorseDuino(int pin = 13);
         void displayText(std::string text);
         void displayInt(int number);
         void displayChar(char character);
+    private:
+        int _pin = pin;
 };
 
-#endif // MORZEDUINO_H
+#endif // MORSEDUINO_H
