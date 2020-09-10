@@ -11,9 +11,9 @@ class MorsDuino {
         void displayInt(int number);
         void displayChar(char character);
     private:
-        int _pin = pin;
-        void showDot();
-        void showDash();
+        int _pin = 13;
+        void _dot(int count = 1);
+        void _dash(int count = 1);
 };
 
 #endif // MORSDUINO_H
