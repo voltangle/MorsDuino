@@ -6,5 +6,5 @@
     "arduino.additionalUrls": "",
     "arduino.logLevel": "info",
     "arduino.enableUSBDetection": true,
-    "C_Cpp.intelliSenseEngine": "Tag Parser"
+    "C_Cpp.intelliSenseEngine": "Default"
 }
