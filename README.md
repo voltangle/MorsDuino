@@ -1,6 +1,8 @@
 # MorseDuino
 
-An Arduino Library for generating Morse code on LEDs. Every Arduino board is supported(library uses standart Wiring functions)
+An Arduino Library for generating Morse code on LEDs. Every Arduino board is supported(library uses standart Wiring functions).
+
+## What it can do
 
 ## Usage
 
