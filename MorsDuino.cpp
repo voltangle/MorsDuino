@@ -38,16 +38,16 @@ void MorsDuino::_delaySeparator(int type) {
     }
 }
 
-void MorsDuino::displayString(String text) {
+void MorsDuino::displayStringOnLED(String text) {
     size_t numberOfElements = sizeof(text)/sizeof(text[0]);
     for (int i = 0; i <= numberOfElements; i++)
     {
-        MorsDuino::displayChar(text[i]);
+        MorsDuino::displayCharOnLED(text[i]);
     }
     
 }
 
-void MorsDuino::displayChar(char character) {
+void MorsDuino::displayCharOnLED(char character) {
     switch (character) {
         // Numbers
         case '1': _dot(); _dash(4); _delaySeparator(1); break;
