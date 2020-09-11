@@ -3,8 +3,8 @@
 
 MorsDuino::MorsDuino(int pin = 13) {
     pinMode(pin, OUTPUT);
-    _letterSeparatorDelay = 500;
-    _wordSeparatorDelay = 1250;
+    _letterSeparatorDelay = 400;
+    _wordSeparatorDelay = 1000;
     _pin = pin;
 }
 
@@ -38,9 +38,8 @@ void MorsDuino::_delaySeparator(int type) {
     }
 }
 
-void MorsDuino::displayText(String text) {
+void MorsDuino::displayString(String text) {
     size_t numberOfElements = sizeof(text)/sizeof(text[0]);
-    
 }
 
 void MorsDuino::displayChar(char character) {

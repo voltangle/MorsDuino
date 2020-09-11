@@ -6,8 +6,7 @@
 class MorsDuino {
     public:
         MorsDuino(int pin);
-        void displayText(String text);
-        void displayInt(int number);
+        void displayString(String text);
         void displayChar(char character);
     private:
         int _pin;
