@@ -1,10 +1,10 @@
 #include "Arduino.h"
 #include "MorsDuino.h"
 
-MorsDuino::MorsDuino(int pin = 13, int letterSeparatorDelay = 1000, int wordSeparatorDelay = 1500) {
+MorsDuino::MorsDuino(int pin = 13) {
     pinMode(pin, OUTPUT);
-    _letterSeparatorDelay = letterSeparatorDelay;
-    _wordSeparatorDelay = wordSeparatorDelay;
+    _letterSeparatorDelay = 500;
+    _wordSeparatorDelay = 1250;
     _pin = pin;
 }
 
@@ -83,6 +83,7 @@ void MorsDuino::displayChar(char character) {
         case 'x': _dash(); _dot(2); _dash(); _delaySeparator(1); break;
         case 'y': _dash(); _dot(); _dash(2); _delaySeparator(1); break;
         case 'z': _dash(2); _dot(2); _delaySeparator(1); break;
+        case ' ': _delaySeparator(2); break;
         default:
             break;
     }

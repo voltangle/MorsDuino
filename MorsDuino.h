@@ -5,7 +5,7 @@
 
 class MorsDuino {
     public:
-        MorsDuino(int pin, int letterSeparatorDelay, int wordSeparatorDelay);
+        MorsDuino(int pin);
         void displayText(String text);
         void displayInt(int number);
         void displayChar(char character);
