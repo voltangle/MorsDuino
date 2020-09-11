@@ -1,5 +1,6 @@
 #include "Arduino.h"
 #include "MorsDuino.h"
+#include "microLED.h"
 
 MorsDuino::MorsDuino(int pin = 13) {
     pinMode(pin, OUTPUT);
@@ -38,16 +39,15 @@ void MorsDuino::_delaySeparator(int type) {
     }
 }
 
-void MorsDuino::displayStringOnLED(String text) {
+void MorsDuino::displayString(String text) {
     size_t numberOfElements = sizeof(text)/sizeof(text[0]);
     for (int i = 0; i <= numberOfElements; i++)
     {
-        MorsDuino::displayCharOnLED(text[i]);
+        MorsDuino::displayChar(text[i]);
     }
-    
 }
 
-void MorsDuino::displayCharOnLED(char character) {
+void MorsDuino::displayChar(char character) {
     switch (character) {
         // Numbers
         case '1': _dot(); _dash(4); _delaySeparator(1); break;
