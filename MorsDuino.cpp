@@ -1,8 +1,10 @@
 #include "Arduino.h"
 #include "MorsDuino.h"
 
-MorsDuino::MorsDuino(int pin = 13, int letterSeparatorDelay, int wordSeparatorDelay) {
+MorsDuino::MorsDuino(int pin = 13, int letterSeparatorDelay = 1000, int wordSeparatorDelay = 1500) {
     pinMode(pin, OUTPUT);
+    _letterSeparatorDelay = letterSeparatorDelay;
+    _wordSeparatorDelay = wordSeparatorDelay;
     _pin = pin;
 }
 
@@ -10,9 +12,9 @@ void MorsDuino::_dot(int count = 1) {
     int num = 1;
     do {
         digitalWrite(_pin, HIGH);
-        delay(250);
+        delay(125);
         digitalWrite(_pin, LOW);
-        delay(250);
+        delay(125);
         num++;
     } while (num <= count);
 }
@@ -21,18 +23,18 @@ void MorsDuino::_dash(int count = 1) {
     int num = 1;
     do {
         digitalWrite(_pin, HIGH);
-        delay(1000);
+        delay(500);
         digitalWrite(_pin, LOW);
-        delay(250);
+        delay(125);
         num++;
     } while (num <= count);
 }
 
 void MorsDuino::_delaySeparator(int type) {
     if (type == 1) {
-        delay(1000);
+        delay(_letterSeparatorDelay);
     } else if (type == 2) {
-        delay(1500);
+        delay(_wordSeparatorDelay);
     }
 }
 
