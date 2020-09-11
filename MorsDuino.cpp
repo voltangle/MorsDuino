@@ -1,7 +1,7 @@
 #include "Arduino.h"
 #include "MorsDuino.h"
 
-MorsDuino::MorsDuino(int pin = 13) {
+MorsDuino::MorsDuino(int pin = 13, int letterSeparatorDelay, int wordSeparatorDelay) {
     pinMode(pin, OUTPUT);
     _pin = pin;
 }

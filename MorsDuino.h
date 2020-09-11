@@ -5,12 +5,14 @@
 
 class MorsDuino {
     public:
-        MorsDuino(int pin = 13);
+        MorsDuino(int pin, int letterSeparatorDelay, int wordSeparatorDelay);
         void displayText(String text);
         void displayInt(int number);
         void displayChar(char character);
     private:
-        int _pin = 13;
+        int _pin;
+        int _letterSeparatorDelay;
+        int _wordSeparatorDelay;
         void _dot(int count = 1);
         void _dash(int count = 1);
         void _delaySeparator(int type);
