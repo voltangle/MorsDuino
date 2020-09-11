@@ -40,6 +40,11 @@ void MorsDuino::_delaySeparator(int type) {
 
 void MorsDuino::displayString(String text) {
     size_t numberOfElements = sizeof(text)/sizeof(text[0]);
+    for (int i = 0; i <= numberOfElements; i++)
+    {
+        MorsDuino::displayChar(text[i]);
+    }
+    
 }
 
 void MorsDuino::displayChar(char character) {
