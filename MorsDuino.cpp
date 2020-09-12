@@ -1,9 +1,13 @@
 #include "Arduino.h"
 #include "MorsDuino.h"
-#include "microLED.h"
+//#include "microLED.h"
 
-MorsDuino::MorsDuino(int pin = 13) {
-    pinMode(pin, OUTPUT);
+MorsDuino::MorsDuino(int pin = 13, String device = "led") {
+    if (device == "led") {
+        pinMode(pin, OUTPUT);
+    } else if (device == "strip") {
+
+    }
     _letterSeparatorDelay = 400;
     _wordSeparatorDelay = 1000;
     _pin = pin;

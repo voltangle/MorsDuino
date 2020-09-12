@@ -5,7 +5,7 @@
 
 class MorsDuino {
     public:
-        MorsDuino(int pin);
+        MorsDuino(int pin, String device);
         // LED
         void displayString(String text);
         void displayChar(char character);
