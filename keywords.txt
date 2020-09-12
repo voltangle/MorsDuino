@@ -1,1 +1,4 @@
-MorsDuino          KEYWORD1
+MorsDuino       KEYWORD1
+displayString   KEYWORD2
+displayChar     KEYWORD2
+displayInt      KEYWORD2
