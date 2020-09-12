@@ -1,4 +1,20 @@
-MorsDuino       KEYWORD1
-displayString   KEYWORD2
-displayChar     KEYWORD2
-displayInt      KEYWORD2
+#######################################
+# Syntax Coloring Map For MorsDuino
+####################################### 
+# Class
+#######################################
+
+MorsDuino	KEYWORD1
+
+#######################################
+# Methods and Functions 
+#######################################	
+
+displayString	KEYWORD2
+displayChar	KEYWORD2
+displayInt	KEYWORD2
+
+#######################################
+# Constants
+#######################################
+ 
