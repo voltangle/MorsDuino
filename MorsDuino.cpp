@@ -96,3 +96,12 @@ void MorsDuino::displayChar(char character) {
             break;
     }
 }
+
+void MorsDuino::displayInt(int number) {
+    String numbers = String(number);
+    size_t numberOfElements = sizeof(numbers)/sizeof(numbers[0]);
+    for (int i = 0; i <= numberOfElements; i++)
+    {
+        MorsDuino::displayChar(numbers[i]);
+    }
+}

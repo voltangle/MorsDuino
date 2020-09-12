@@ -6,9 +6,9 @@
 class MorsDuino {
     public:
         MorsDuino(int pin, String device);
-        // LED
         void displayString(String text);
         void displayChar(char character);
+        void displayInt(int number);
     private:
         int _pin;
         int _letterSeparatorDelay;
