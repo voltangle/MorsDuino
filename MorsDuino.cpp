@@ -2,10 +2,10 @@
 #include "MorsDuino.h"
 //#include "microLED.h"
 
-MorsDuino::MorsDuino(int pin = 13, String device = "led") {
-    if (device == "led") {
+MorsDuino::MorsDuino(int pin = 13, int device = 1) {
+    if (device == 1) {
         pinMode(pin, OUTPUT);
-    } else if (device == "strip") {
+    } else if (device == 2) {
 
     }
     _letterSeparatorDelay = 400;
