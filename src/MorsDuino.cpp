@@ -1,6 +1,5 @@
 #include "Arduino.h"
 #include "MorsDuino.h"
-//#include "microLED.h"
 
 MorsDuino::MorsDuino(int pin = 13, int device = 1) {
     if (device == 1) {
