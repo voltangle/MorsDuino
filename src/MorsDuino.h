@@ -26,18 +26,23 @@ class MorsDuinoRgbLed {
     void displayInt(int number);
     void displayChar(char character);
 
-    void setDefaultColor(char color);
-    void changeBrightness(int brightness);
+    void setColor(char color);
+    void setBrightness(int brightness);
+    void setState(bool state);
 
    private:
     int _redPin;
     int _greenPin;
     int _bluePin;
 
+    int _redColorBuffer;
+    int _greenColorBuffer;
+    int _blueColorBuffer;
+
     int _letterSeparatorDelay;
     int _wordSeparatorDelay;
 
-    char _defaultColor;
+    char _savedColor;
 
     int _redPinMaxBrightnessBuffer;
     int _greenPinMaxBrightnessBuffer;
@@ -46,6 +51,7 @@ class MorsDuinoRgbLed {
     void _dot(int count);
     void _dash(int count);
     void _delaySeparator(int type);
+    void _changeState(bool state);
     void _drawColor(char color);
     void _off();
 };

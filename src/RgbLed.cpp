@@ -1,15 +1,33 @@
 #include "Arduino.h"
 #include "MorsDuino.h"
 
-void MorsDuinoRgbLed::setDefaultColor(char color) {
-    _defaultColor = color;
+void MorsDuinoRgbLed::setColor(char color) {
+    _drawColor(color);
+    _savedColor = color;
+}
+
+void MorsDuinoRgbLed::setState(bool state) {
+    if (state) {
+        analogWrite(_redPin, _redColorBuffer);
+        analogWrite(_greenPin, _greenColorBuffer);
+        analogWrite(_bluePin, _blueColorBuffer);
+    } else {
+        analogWrite(_redPin, 0);
+        analogWrite(_greenPin, 0);
+        analogWrite(_bluePin, 0);
+    }
 }
 
 // Function to display color
 void MorsDuinoRgbLed::_drawColor(char color) {
-    int redColor = ((color >> 16) & 0xFF) / 255.0;  // Extract the RR byte
-    int greenColor = ((color >> 8) & 0xFF) / 255.0;   // Extract the GG byte
+    int redColor = ((color >> 16) & 0xFF) / 255.0;   // Extract the RR byte
+    int greenColor = ((color >> 8) & 0xFF) / 255.0;  // Extract the GG byte
     int blueColor = ((color)&0xFF) / 255.0;          // Extract the BB byte
+
+    // Save colors
+    _redColorBuffer = redColor;
+    _greenColorBuffer = greenColor;
+    _blueColorBuffer = blueColor;
 
     analogWrite(_redPin, redColor);
     analogWrite(_greenPin, greenColor);
@@ -24,7 +42,7 @@ void MorsDuinoRgbLed::_off() {
 void MorsDuinoRgbLed::_dot(int count = 1) {
     int num = 1;
     do {
-        _drawColor(_defaultColor);
+        _drawColor(_savedColor);
         delay(125);
         _off();
         delay(125);
@@ -34,7 +52,7 @@ void MorsDuinoRgbLed::_dot(int count = 1) {
 void MorsDuinoRgbLed::_dash(int count = 1) {
     int num = 1;
     do {
-        _drawColor(_defaultColor);
+        _drawColor(_savedColor);
         delay(500);
         _off();
         delay(125);
@@ -257,3 +275,18 @@ void MorsDuinoRgbLed::displayInt(int number) {
         MorsDuinoRgbLed::displayChar(numbers[i]);
     }
 }
+
+/*void MorsDuinoRgbLed::setBrightness(int brightness) {
+    // Extract data
+    int redColor = ((_savedColor >> 16) & 0xFF) / 255.0;   // Extract the RR byte
+    int greenColor = ((_savedColor >> 8) & 0xFF) / 255.0;  // Extract the GG byte
+    int blueColor = ((_savedColor)&0xFF) / 255.0;          // Extract the BB byte
+
+    // Save data
+    _redPinMaxBrightnessBuffer = redColor;
+
+    // Set brightness using percents. Just get a percent value from variables :)
+    analogWrite(_redPin, redColor % brightness);
+    analogWrite(_greenPin, greenColor % brightness);
+    analogWrite(_bluePin, blueColor % brightness);
+}*/
