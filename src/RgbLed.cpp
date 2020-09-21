@@ -276,7 +276,7 @@ void MorsDuinoRgbLed::displayInt(int number) {
     }
 }
 
-/*void MorsDuinoRgbLed::setBrightness(int brightness) {
+void MorsDuinoRgbLed::setBrightness(int brightness) {
     // Extract data
     int redColor = ((_savedColor >> 16) & 0xFF) / 255.0;   // Extract the RR byte
     int greenColor = ((_savedColor >> 8) & 0xFF) / 255.0;  // Extract the GG byte
@@ -289,4 +289,4 @@ void MorsDuinoRgbLed::displayInt(int number) {
     analogWrite(_redPin, redColor % brightness);
     analogWrite(_greenPin, greenColor % brightness);
     analogWrite(_bluePin, blueColor % brightness);
-}*/
+}
