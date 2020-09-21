@@ -3,39 +3,51 @@
 
 #include "Arduino.h"
 
-class MorsDuino {
+class MorsDuinoLed {
    public:
-    class Led {
-       public:
-        Led(int pin);
-        void displayString(String text);
-        void displayChar(char character);
-        void displayInt(int number);
+    MorsDuinoLed(int pin);
+    void displayString(String text);
+    void displayChar(char character);
+    void displayInt(int number);
 
-       private:
-        int _pin;
-        int _letterSeparatorDelay;
-        int _wordSeparatorDelay;
-        void _dot(int count);
-        void _dash(int count);
-        void _delaySeparator(int type);
-    };
-    class RgbLed {
-       public:
-        RgbLed(int red, int green, int blue);
-        void displayString(char color, String text);
-        void displayInt(char color, int number);
-        void displayChar(char color, char character);
+   private:
+    int _pin;
+    int _letterSeparatorDelay;
+    int _wordSeparatorDelay;
+    void _dot(int count);
+    void _dash(int count);
+    void _delaySeparator(int type);
+};
+class MorsDuinoRgbLed {
+   public:
+    MorsDuinoRgbLed(int red, int green, int blue);
 
-       private:
-        int _redPin;
-        int _greenPin;
-        int _letterSeparatorDelay;
-        int _wordSeparatorDelay;
-        void _dot(int count);
-        void _dash(int count);
-        void _delaySeparator(int type);
-    };
+    void displayString(String text);
+    void displayInt(int number);
+    void displayChar(char character);
+
+    void setDefaultColor(char color);
+    void changeBrightness(int brightness);
+
+   private:
+    int _redPin;
+    int _greenPin;
+    int _bluePin;
+
+    int _letterSeparatorDelay;
+    int _wordSeparatorDelay;
+
+    char _defaultColor;
+
+    int _redPinMaxBrightnessBuffer;
+    int _greenPinMaxBrightnessBuffer;
+    int _bluePinMaxBrightnessBuffer;
+
+    void _dot(int count);
+    void _dash(int count);
+    void _delaySeparator(int type);
+    void _drawColor(char color);
+    void _off();
 };
 
 #endif  // MORSDUINO_H
