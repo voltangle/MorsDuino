@@ -4,6 +4,7 @@
 void MorsDuinoRgbLed::setColor(char color) {
     _drawColor(color);
     _savedColor = color;
+    _applyBrightnessSettings();
 }
 
 void MorsDuinoRgbLed::setState(bool state) {

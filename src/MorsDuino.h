@@ -52,6 +52,7 @@ class MorsDuinoRgbLed {
     void _dash(int count);
     void _delaySeparator(int type);
     void _changeState(bool state);
+    void _applyBrightnessSettings();
     void _drawColor(char color);
     void _off();
 };
