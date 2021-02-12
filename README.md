@@ -3,6 +3,7 @@
 [![arduino-library-badge](https://www.ardu-badge.com/badge/MorseDuino.svg?)](https://www.ardu-badge.com/MorseDuino)
 
 The lightweight Arduino Library for generating Morse code on LEDs, light strips, and speakers. Every Arduino board is supported(library uses standart Wiring functions).
+**This repo was not updated for a long time, bugs expected. I will update the repo later, and also move to AVR functions instead of Arduino ones.
 
 ## What it can do
 
