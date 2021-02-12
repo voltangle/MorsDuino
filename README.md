@@ -11,7 +11,7 @@ The lightweight Arduino Library for generating Morse code on LEDs, light strips,
 ``` C++
 #include "MorsDuino.h"
 
-MorsDuinoLed led(13); // Make new instance of MarsDuinoLed class with name 'led'
+MorsDuino led(13); // Make new instance of MarsDuinoLed class with name 'led'
 
 void setup() {
   Serial.begin(9600); // Start serial on 9600 baud rate
